@@ -1,52 +1,74 @@
-const inquirer = require("inquirer");
-const fs = require("fs");
+const inquirer = require('inquirer');
+const fs = require('fs');
+const teamProfiles = require('./util/teamProfiles.html');
 
+// Array of questions
+const questions = [
+    {
+      type: "confirm",
+      name: "welcomeMessage",
+      message: "Welcome to a team profile generator. Let's start off by entering your team manager's information. Press enter to begin",
+    },
+    {
+      type: "input",
+      name: "managerName",
+      message: "Input team managers name.",
+    },
+    {
+      type: "input",
+      name: "managerId",
+      message: "Input team managers employee ID.",
+    },
+    {
+      type: "input",
+      name: "managerOffice",
+      message: "Input team managers office number.",
+    },
+    {
+      type: "input",
+      name: "managerEmail",
+      message: "Input team managers e-mail.",
+    },
+    {
+      type: "input",
+      name: "managerGitHub",
+      message: "Input team managers GitHub account.",
+      },
+  ]
+//   .then((response) => {
+//     console.log(response);
+//     const html = generateHTML(response);
 
-inquirer
-  .prompt([
-    {
-      type: "input",
-      name: "name",
-      message: "What is your name?",
-    },
-    {
-      type: "input",
-      name: "location",
-      message: "What is your location?",
-    },
-    {
-      type: "input",
-      name: "bio",
-      message: "What is your bio?",
-    },
-    {
-      type: "input",
-      name: "food",
-      message: "What is your favorite food?",
-    },
-    {
-      type: "input",
-      name: "github",
-      message: "What is your GitHub?",
-    },
-    {
-      type: "input",
-      name: "linkedin",
-      message: "What is your LinkedIn?",
-    },
-  ])
-  .then((response) => {
-    console.log(response);
-    const html = generateHTML(response);
-    
-    const filename = `${response.name.toLowerCase().split(" ").join("")}.html`;
-    fs.writeFile(filename, html, (err) =>
-      err ? console.log(err) : console.log("Successfully created .html!")
-    );
+//     const filename = `${response.name.toLowerCase().split(" ").join("")}.html`;
+//     fs.writeFile(filename, html, (err) =>
+//       err ? console.log(err) : console.log("Successfully created .html!")
+//     );
+//   });
+
+function writeFile(fileName, answers) {
+    fs.writeFile(fileName, answers, (err) => {
+    if (err) {
+      return console.log(err)
+    } else { 
+      console.log("Successfully wrote teamProfiles.html")
+    }
   });
+}
 
-const generateHTML = function (answers) {
-  const html = `<!DOCTYPE html>
+// Function to initialize app
+const init = () => {
+  inquirer.prompt(questions)
+  .then(function (answers) {
+    writeFile("teamProfiles.html", teamProfiles(answers));
+    console.log(answers)
+  });
+}
+
+// Function call to initialize app
+init();
+
+function teamProfiles(answers) {
+    return `<!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="utf-8">
@@ -68,14 +90,14 @@ const generateHTML = function (answers) {
       <div class="container">
           <div class="card">
               <div class="content">
-                  <h2>${answers.name}</h2>
-                  <h3>${answers.title}</h3>
+                  <h2>${answers.managerName}</h2>
+                  <h3>Manager</h3>
                   <br>
                   <ul>
-                      <li>ID: ${answers.id}</li>
-                      <li>Office Number: ${answers.office}</li>
-                      <li>E-mail: ${answers.email}</li>
-                      <li>GitHub: ${answers.github}</li>
+                      <li>ID: ${answers.managerId}</li>
+                      <li>Office Number: ${answers.managerOffice}</li>
+                      <li>E-mail: ${answers.managerEmail}</li>
+                      <li>GitHub: ${answers.managerGitHub}</li>
                   </ul>
               </div>
           </div>
@@ -147,10 +169,10 @@ const generateHTML = function (answers) {
   
       </div>
   
-      <script src="script.js"></script>
     </body>
   </html>
   `;
 
-  return html;
 };
+
+module.exports = teamProfiles;

@@ -10,7 +10,7 @@ body {
     justify-self: start;
     align-items: center; */
     min-height: 100vh;
-    background: url(/images/BlobBackground.png) no-repeat center fixed;
+    background: url(/assets/images/BlobBackground.png) no-repeat center fixed;
     background-size: cover;
 }
 
