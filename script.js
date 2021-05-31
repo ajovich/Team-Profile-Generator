@@ -1,6 +1,18 @@
+// Node Modules
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+// Link to HTML page creation based off of user input
 const teamProfiles = require('./util/teamProfiles.html');
+
+// Team Profiles
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Employee = require('./lib/Employee');
+const Intern = require('./lib/Intern');
+
+// Empty array to push team members into 
+const teamArray = [];
 
 // Array of questions
 const questions = [
