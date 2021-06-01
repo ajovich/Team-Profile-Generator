@@ -19,5 +19,12 @@
   "homepage": "https://github.com/ajovich/Team-Profile-Generator#readme",
   "dependencies": {
     "inquirer": "^8.1.0"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "devDependencies": {
+    "jest": "^27.0.3"
   }
 }
