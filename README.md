@@ -50,11 +50,11 @@
 
 * Click [here](https://drive.google.com/file/d/1jNQrWvhbOdft3DlQJJVZNo1VNL8gaqjb/preview) for animation demonstration.
 
-* TBD ![Styling prior to user input for team profiles](assets/images/BeforeUserInput.png)
+* ![Styling prior to user input for team profiles](assets/images/BeforeUserInput.png)
 
-* TBD ![Command line user input](assets/images/UserInputTerminal.png)
+* ![Command line user input](assets/images/UserInputTerminal.png)
 
-* TBD ![Final team profiles after user input](assets/images/final.png)
+* ![Final team profiles after user input](assets/images/final.png)
 
 
 ## Link to GitHub Repository
