@@ -48,11 +48,13 @@
 
 ## Animation & Images
 
-* TBD Link to Animation 
+* <iframe src="https://drive.google.com/file/d/1jNQrWvhbOdft3DlQJJVZNo1VNL8gaqjb/preview" width="640" height="480"></iframe>
 
-* TBD ![Alt Text](Image Path)
+* TBD ![Styling prior to user input for team profiles](assets/images/BeforeUserInput.png)
 
-* TBD ![Alt Text](Image Path)
+* TBD ![Command line user input](assets/images/UserInputTerminal.png)
+
+* TBD ![Final team profiles after user input](assets/images/final.png)
 
 
 ## Link to GitHub Repository

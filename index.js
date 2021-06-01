@@ -23,64 +23,94 @@ const questions = [
     },
     {
       type: "input",
-      name: "managerName",
+      name: "mName",
       message: "Input team managers name.",
     },
     {
       type: "input",
-      name: "managerId",
+      name: "mId",
       message: "Input team managers employee ID.",
     },
     {
       type: "input",
-      name: "managerOffice",
+      name: "mOffice",
       message: "Input team managers office number.",
     },
     {
       type: "input",
-      name: "managerEmail",
+      name: "mEmail",
       message: "Input team managers e-mail.",
     },
     {
       type: "input",
-      name: "managerGitHub",
+      name: "mGitHub",
       message: "Input team managers GitHub account.",
-      },
+    },
+    {
+      type: "list",
+      name: "title",
+      message: "Please choose your team members role.",
+      choices: ['Engineer', 'Employee', 'Intern']
+    },
+    {
+      type: "input",
+      name: "name",
+      message: "Input team members name.",
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "Input team members employee ID.",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Input team members e-mail.",
+    },
+    {
+      type: "input",
+      name: "github",
+      message: "Input team members GitHub.",
+    },
+    {
+      type: "confirm",
+      name: "addTeamMembers",
+      message: "Would you like to add more team members?",
+      default: false
+    },
+    {
+      type: "input",
+      name: "school",
+      message: "Input intern's school.",
+    },
   ]
-//   .then((response) => {
-//     console.log(response);
-//     const html = generateHTML(response);
 
-//     const filename = `${response.name.toLowerCase().split(" ").join("")}.html`;
-//     fs.writeFile(filename, html, (err) =>
-//       err ? console.log(err) : console.log("Successfully created .html!")
-//     );
-//   });
-
-function writeFile(fileName, answers) {
-    fs.writeFile(fileName, answers, (err) => {
-    if (err) {
-      return console.log(err)
-    } else { 
-      console.log("Successfully wrote teamProfiles.html")
-    }
-  });
+  // Function to write HTML file
+function writeFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => {
+  if (err) {
+    return console.log(err)
+  } else { 
+    console.log("Successfully wrote your team profiles!")
+  }
+});
 }
 
 // Function to initialize app
 const init = () => {
-  inquirer.prompt(questions)
-  .then(function (answers) {
-    writeFile("teamProfiles.html", teamProfiles(answers));
-    console.log(answers)
-  });
+inquirer.prompt(questions)
+.then(function (data) {
+  writeFile("teamProfiles.html", generateHTML(data));
+  console.log(data)
+});
 }
 
 // Function call to initialize app
 init();
 
-function teamProfiles(answers) {
-    return `<!DOCTYPE html>
+
+const generateHTML = function (answers) {
+    const html = `<!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="utf-8">
@@ -185,6 +215,5 @@ function teamProfiles(answers) {
   </html>
   `;
 
+  return html;
 };
-
-module.exports = teamProfiles;
