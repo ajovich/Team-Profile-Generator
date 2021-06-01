@@ -61,4 +61,4 @@
 
 ## Link to GitHub Repository
 
-* TBD
+* https://ajovich.github.io/Team-Profile-Generator/
