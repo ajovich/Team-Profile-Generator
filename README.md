@@ -48,7 +48,7 @@
 
 ## Animation & Images
 
-* <iframe src="https://drive.google.com/file/d/1jNQrWvhbOdft3DlQJJVZNo1VNL8gaqjb/preview" width="640" height="480"></iframe>
+* Click [here](https://drive.google.com/file/d/1jNQrWvhbOdft3DlQJJVZNo1VNL8gaqjb/preview) for animation demonstration.
 
 * TBD ![Styling prior to user input for team profiles](assets/images/BeforeUserInput.png)
 
