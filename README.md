@@ -54,7 +54,7 @@
 
 ![Command line user input](assets/images/UserInputTerminal.png)
 
-![Final team profiles after user input](assets/images/final.png)
+![Final team profiles after user input](assets/images/finalTeam.png)
 
 ![Failed jest tests for employee class](assets/images/jestTests.png)
 
