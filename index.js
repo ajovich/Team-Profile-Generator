@@ -6,10 +6,10 @@ const fs = require('fs');
 const teamProfiles = require('./util/teamProfiles.html');
 
 // Team Profiles
-const Manager = require('./lib/Manager');
-const Engineer = require('./lib/Engineer');
-const Employee = require('./lib/Employee');
-const Intern = require('./lib/Intern');
+// const Manager = require('lib/Manager.js');
+// const Engineer = require('lib/Engineer.js');
+// const Employee = require('lib/Employee.js');
+// const Intern = require('lib/Intern.js');
 
 // Empty array to push team members into 
 const teamArray = [];
@@ -23,7 +23,7 @@ const questions = [
     },
     {
       type: "input",
-      name: "mName",
+      name: "mame",
       message: "Input team managers name.",
     },
     {
@@ -33,22 +33,22 @@ const questions = [
     },
     {
       type: "input",
-      name: "mOffice",
+      name: "office",
       message: "Input team managers office number.",
     },
     {
       type: "input",
-      name: "mEmail",
+      name: "email",
       message: "Input team managers e-mail.",
     },
     {
       type: "input",
-      name: "mGitHub",
+      name: "github",
       message: "Input team managers GitHub account.",
     },
     {
       type: "list",
-      name: "title",
+      name: "role",
       message: "Please choose your team members role.",
       choices: ['Engineer', 'Employee', 'Intern']
     },
@@ -84,6 +84,8 @@ const questions = [
       message: "Input intern's school.",
     },
   ]
+
+  // TODO: Add an if statement??? Intern school information prompt after adding team members. 
 
   // Function to write HTML file
 function writeFile(fileName, data) {
@@ -132,14 +134,14 @@ const generateHTML = function (answers) {
       <div class="container">
           <div class="card">
               <div class="content">
-                  <h2>${answers.managerName}</h2>
-                  <h3>Manager</h3>
+                  <h2>${answers.name}</h2>
+                  <h3>${answers.role}</h3>
                   <br>
                   <ul>
-                      <li>ID: ${answers.managerId}</li>
-                      <li>Office Number: ${answers.managerOffice}</li>
-                      <li>E-mail: ${answers.managerEmail}</li>
-                      <li>GitHub: ${answers.managerGitHub}</li>
+                      <li>ID: ${answers.id}</li>
+                      <li>Office Number: ${answers.office}</li>
+                      <li>E-mail: ${answers.email}</li>
+                      <li>GitHub: ${answers.github}</li>
                   </ul>
               </div>
           </div>
@@ -147,7 +149,7 @@ const generateHTML = function (answers) {
           <div class="card">
               <div class="content">
                   <h2>${answers.name}</h2>
-                  <h3>${answers.title}</h3>
+                  <h3>${answers.role}</h3>
                   <br>
                   <ul>
                       <li>ID: ${answers.id}</li>
@@ -160,7 +162,7 @@ const generateHTML = function (answers) {
           <div class="card">
               <div class="content">
                   <h2>${answers.name}</h2>
-                  <h3>${answers.title}</h3>
+                  <h3>${answers.role}</h3>
                   <br>
                   <ul>
                       <li>ID: ${answers.id}</li>
@@ -173,7 +175,7 @@ const generateHTML = function (answers) {
           <div class="card">
               <div class="content">
                   <h2>${answers.name}</h2>
-                  <h3>${answers.title}</h3>
+                  <h3>${answers.role}</h3>
                   <br>
                   <ul>
                       <li>ID: ${answers.id}</li>
@@ -186,7 +188,7 @@ const generateHTML = function (answers) {
           <div class="card">
               <div class="content">
                   <h2>${answers.name}</h2>
-                  <h3>${answers.title}</h3>
+                  <h3>${answers.role}</h3>
                   <br>
                   <ul>
                       <li>ID: ${answers.id}</li>
@@ -199,7 +201,7 @@ const generateHTML = function (answers) {
           <div class="card">
               <div class="content">
                   <h2>${answers.name}</h2>
-                  <h3>${answers.title}</h3>
+                  <h3>${answers.role}</h3>
                   <br>
                   <ul>
                       <li>ID: ${answers.id}</li>

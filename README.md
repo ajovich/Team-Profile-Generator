@@ -56,6 +56,8 @@
 
 ![Final team profiles after user input](assets/images/final.png)
 
+![Failed jest tests for employee class](assets/images/jestTests.png)
+
 
 ## Link to GitHub Repository
 
